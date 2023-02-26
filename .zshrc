@@ -14,7 +14,11 @@ function git_branch_name()
 # Enable substitution in the prompt.
 setopt prompt_subst
 
-# For Bash - use PS1
+# For Bash with font-triangle
+# BASH_TRIANGLE=$'\uE0B0'
+# PS1='\[\e[31m\]\u \[\e[36m\]\w\[\e[33m\]$(git_branch_name) \[\e[36m\]$(echo $BASH_TRIANGLE) \[\e[00m\]'
+
+# For Bash with angle bracket
 # PS1='\[\e[31m\]\u \[\e[36m\]\w\[\e[33m\]$(git_branch_name) \[\e[36m\]> \[\e[00m\]'
 PROMPT='%F{red}%n %F{cyan}%~%F{yellow}$(git_branch_name)%F{cyan}> %f'
 # ---- PROMPT SETUP ---- #
