@@ -1,3 +1,38 @@
+# --- COLORS --- #
+function print_triangle()
+{
+    RIGHT_TRIANGLE="\xe2\x96\xb6"
+    printf "${RIGHT_TRIANGLE}"
+}
+
+COLOR_CLEAR='\[\e[00m\]'
+BOLD='\[\e[1m\]'
+
+FG_DEFAULT='\[\e[39m\]'
+FG_BLACK='\[\e[30m\]'
+FG_RED='\[\e[31m\]'
+FG_GREEN='\[\e[32m\]'
+FG_YELLOW='\[\e[33m\]'
+FG_BLUE='\[\e[34m\]'
+FG_MAGENTA='\[\e[35m\]'
+FG_CYAN='\[\e[36m\]'
+FG_LIGHT_GREY='\[\e[37m\]'
+FG_DARK_GREY='\[\e[90m\]'
+
+BG_DEFAULT='\[\e[49m\]'
+BG_BLACK='\[\e[40m\]'
+BG_RED='\[\e[41m\]'
+BG_GREEN='\[\e[42m\]'
+BG_YELLOW='\[\e[43m\]'
+BG_BLUE='\[\e[44m\]'
+BG_MAGENTA='\[\e[45m\]'
+BG_CYAN='\[\e[46m\]'
+BG_LIGHT_GREY='\[\e[47m\]'
+BG_DARK_GREY='\[\e[100m\]'
+
+# PS1="${FG_RED}\u ${FG_CYAN}\w ${FG_BLACK}${BG_YELLOW}\$(git_branch_name)${BG_DEFAULT}${FG_YELLOW}\$(print_triangle) ${COLOR_CLEAR}"
+# --- END COLORS --- #
+
 # ---- PROMPT SETUP ---- #
 # Find and set branch name var if in git repository.
 function git_branch_name()
