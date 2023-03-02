@@ -1,10 +1,4 @@
-# --- COLORS --- #
-function print_triangle()
-{
-    RIGHT_TRIANGLE="\xe2\x96\xb6"
-    printf "${RIGHT_TRIANGLE}"
-}
-
+# --- COLORS for BASH --- #
 COLOR_CLEAR='\[\e[00m\]'
 BOLD='\[\e[1m\]'
 
@@ -42,20 +36,22 @@ function git_branch_name()
   then
     :
   else
-    echo ' ('$branch')'
+    echo '('$branch')'
   fi
+}
+
+function print_triangle()
+{
+    RIGHT_TRIANGLE="\xe2\x96\xb6"
+    printf "${RIGHT_TRIANGLE}"
 }
 
 # Enable substitution in the prompt.
 setopt prompt_subst
 
 # For Bash with font-triangle
-# BASH_TRIANGLE=$'\uE0B0'
-# PS1='\[\e[31m\]\u \[\e[36m\]\w\[\e[33m\]$(git_branch_name) \[\e[36m\]$(echo $BASH_TRIANGLE) \[\e[00m\]'
-
-# For Bash with angle bracket
-# PS1='\[\e[31m\]\u \[\e[36m\]\w\[\e[33m\]$(git_branch_name) \[\e[36m\]> \[\e[00m\]'
-PROMPT='%F{red}%n %F{cyan}%~%F{yellow}$(git_branch_name)%F{cyan}> %f'
+# PS1="${FG_RED}\u ${FG_CYAN}\w ${FG_BLACK}${BG_YELLOW}\$(git_branch_name)${BG_DEFAULT}${FG_YELLOW}\$(print_triangle) ${COLOR_CLEAR}"
+PROMPT='%F{red}%n %F{cyan}%~ %F{yellow}%S$(git_branch_name)%s%F{yellow}$(print_triangle) %f'
 # ---- PROMPT SETUP ---- #
 
 
