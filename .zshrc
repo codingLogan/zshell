@@ -52,6 +52,8 @@ setopt prompt_subst
 # For Bash with font-triangle
 # PS1="${FG_RED}\u ${FG_CYAN}\w ${FG_BLACK}${BG_YELLOW}\$(git_branch_name)${BG_DEFAULT}${FG_YELLOW}\$(print_triangle) ${COLOR_CLEAR}"
 PROMPT='%F{red}%n %F{cyan}%~ %F{yellow}%S$(git_branch_name)%s%F{yellow}$(print_triangle) %f'
+# ZSH Green branch and triangle
+# PROMPT='%F{red}%n %F{cyan}%~ %F{green}$(git_branch_name)%F{green}$(print_triangle) %f'
 # ---- PROMPT SETUP ---- #
 
 
