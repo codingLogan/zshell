@@ -36,24 +36,19 @@ function git_branch_name()
   then
     :
   else
-    echo '('$branch')'
+    echo "$branch "
   fi
-}
-
-function print_triangle()
-{
-    RIGHT_TRIANGLE="\xe2\x96\xb6"
-    printf "${RIGHT_TRIANGLE}"
 }
 
 # Enable substitution in the prompt.
 setopt prompt_subst
+NEWLINE=$'\n'
+PROMPT='%F{cyan}%1~ %F{yellow}$(git_branch_name)%F{white}${NEWLINE}>%f '
 
-# For Bash with font-triangle
-# PS1="${FG_RED}\u ${FG_CYAN}\w ${FG_BLACK}${BG_YELLOW}\$(git_branch_name)${BG_DEFAULT}${FG_YELLOW}\$(print_triangle) ${COLOR_CLEAR}"
-PROMPT='%F{red}%n %F{cyan}%~ %F{yellow}%S$(git_branch_name)%s%F{yellow}$(print_triangle) %f'
-# ZSH Green branch and triangle
-# PROMPT='%F{red}%n %F{cyan}%~ %F{green}$(git_branch_name)%F{green}$(print_triangle) %f'
+# Prompt Enhancement / Card + Time
+# Card Calendar plugin - see: https://github.com/codingLogan/card-calendar-prompt
+source ~/dev/card-calendar-prompt/prompt.sh
+PROMPT="%(?.%F{black}%K{green}.%F{white}%K{red}) \$(get_calendar_card) %t %k $PROMPT"
 # ---- PROMPT SETUP ---- #
 
 
@@ -65,22 +60,13 @@ alias {gmn,git-main}='git fetch && git checkout main && git pull'
 # Handy shortcut for running ruby commands
 alias bx='bundle exec'
 
-# Because I pretty much always want -al
-alias ls='ls -al'
+# Because I pretty much always want -a
+alias ls='ls -a'
 
 # Open up .zshrc quickly with a command
 alias aliase='code ~/.zshrc'
+
+# Run a fresh install and start the dev server
+alias npmc='npm ci && npm run dev'
+
 # ---- MY ALIASES ---- #
-
-
-# ---- WORK ALIASES ---- #
-# MX specific related aliases
-export DEV_FOLDER="/Users/logan.rasmussen/dev"
-alias firefly='PB_CLIENT_TYPE="protobuf/nats/client" bundle exec rails s -b 0.0.0.0'
-alias restartfirefly='lsof -t -i tcp:3000 | xargs kill -9'
-alias platform='PB_CLIENT_TYPE="protobuf/nats/client" bundle exec rails s -p 4000'
-alias connecte='code /Users/logan.rasmussen/dev/curls/papi/sand/loganroauth2'
-alias connect='/Users/logan.rasmussen/dev/curls/papi/sand/loganroauth2 | get-url'
-alias mdpre='/Users/logan.rasmussen/dev/curls/papi/sand/preinitiated-md'
-alias atrium='ruby -rwebrick -e "WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd).start"'
-# ---- WORK ALIASES ---- #
