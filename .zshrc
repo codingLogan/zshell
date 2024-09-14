@@ -61,7 +61,7 @@ alias {gmn,git-main}='git fetch && git checkout main && git pull'
 alias bx='bundle exec'
 
 # Because I pretty much always want -a
-alias ls='ls -a'
+alias ls='ls -a --color=auto'
 
 # Open up .zshrc quickly with a command
 alias aliase='code ~/.zshrc'
