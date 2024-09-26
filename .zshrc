@@ -51,6 +51,37 @@ source ~/dev/card-calendar-prompt/prompt.sh
 PROMPT="%(?.%F{black}%K{green}.%F{white}%K{red}) \$(get_calendar_card) %t %k $PROMPT"
 # ---- PROMPT SETUP ---- #
 
+# ---- Custom functions --- #
+# use 'pomo' in the terminal to start it
+pomo() {
+  date
+  echo "Starting 25 minute pomodoro, now!\n"
+  say "Starting 25 minute pomodoro, now!"
+  for i in $(seq 1 25);
+  do
+      if [ $i -lt 6 ]; then
+          # Extra space for easy reading
+          echo "Minute  $i: Just start!"
+      elif [ $i -lt 10 ]; then
+          # Extra space for easy reading
+          echo "Minute  $i: You've got this!"
+      elif [ $i -lt 16 ]; then
+          echo "Minute $i: You've got this!"
+      elif [ $i -lt 20 ]; then
+          echo "Minute $i: Keep going!"
+      elif [ $i -lt 25 ]; then
+          echo "Minute $i: Almost there!"
+      else
+          echo "Minute $i: Last minute!"
+      fi
+      sleep 60
+  done
+  echo "\nPomodoro complete!"
+  echo "Reward yo'self!\n"
+  say "Pomodoro complete!"
+  date
+}
+# ---- Custom functions --- #
 
 # ---- MY ALIASES ---- #
 # Shortcut to getting the most recent master/main checked out
