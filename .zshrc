@@ -56,14 +56,16 @@ PROMPT="%(?.%F{black}%K{green}.%F{white}%K{red}) \$(get_calendar_card) %t %k $PR
 pomo() {
   clear
   date
-  echo "Starting 25 minute pomodoro.\n"
+  echo "25 minute pomodoro.\n"
   for i in $(seq 1 25);
   do
       lrprogress $i 25
       sleep 60
   done
-  echo "\nPomodoro complete!\n"
-  say "Pomodoro complete!"
+  echo "\n\nPomodoro complete!\n"
+  afplay /System/Library/Sounds/Hero.aiff
+  afplay /System/Library/Sounds/Hero.aiff
+  afplay /System/Library/Sounds/Hero.aiff
 }
 
 # lrprogress <current> <total>
