@@ -54,6 +54,7 @@ PROMPT="%(?.%F{black}%K{green}.%F{white}%K{red}) \$(get_calendar_card) %t %k $PR
 # ---- Custom functions --- #
 # use 'pomo' in the terminal to start it
 pomo() {
+  clear
   date
   echo "Starting 25 minute pomodoro.\n"
   for i in $(seq 1 25);
@@ -63,14 +64,24 @@ pomo() {
   done
   echo "\nPomodoro complete!\n"
   say "Pomodoro complete!"
-  date
 }
 
 # lrprogress <current> <total>
 lrprogress() {
+
+  # Color variables
+  red='\033[0;31m'
+  green='\033[0;32m'
+  yellow='\033[0;33m'
+  blue='\033[0;34m'
+  magenta='\033[0;35m'
+  cyan='\033[0;36m'
+  # Clear the color after that
+  clear='\033[0m'
+
   CURRENT=$1
   MAX=$2
-  printf "\r["
+  printf "\r${green}["
 
   for i in $(seq $MAX); do
     if [ "$i" -le "$CURRENT" ]; then
@@ -80,8 +91,8 @@ lrprogress() {
     fi
   done
 
-  printf "] "
-  printf "$CURRENT / $MAX"
+  printf "]${clear} "
+  printf "${cyan}$CURRENT / $MAX${clear}"
 }
 # ---- Custom functions --- #
 
