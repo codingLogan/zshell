@@ -51,6 +51,49 @@ source ~/dev/card-calendar-prompt/prompt.sh
 PROMPT="%(?.%F{black}%K{green}.%F{white}%K{red}) \$(get_calendar_card) %t %k $PROMPT"
 # ---- PROMPT SETUP ---- #
 
+
+# --- ALTERNATIVE PROMPT SETUP --- #
+
+month=$(date +%m)
+
+if [[ $month -le 2 || $month -eq 12 ]]; then
+    # Winter = Jan, Feb, December
+    theme="winter"
+
+    color_time=14
+    color_name=39
+    color_dir=45
+    color_cursor=51
+elif [[ $month -le 5 ]]; then
+    # Spring = March, April, May
+    theme="spring"
+
+    color_time=110
+    color_name=112
+    color_dir=118
+    color_cursor=170
+elif [[ $month -le 8 ]]; then
+    # Summer = June, July, Aug,
+    theme="summer"
+
+    color_time=220
+    color_name=223
+    color_dir=226
+    color_cursor=229
+else
+    # Fall = Sept, Oct, Nov
+    theme="fall"
+
+    color_time=202
+    color_name=208
+    color_dir=212
+    color_cursor=220
+fi
+
+PROMPT="%(?.%F{green}√.%F{red}X)%f %F{$color_time}%*%f %F{$color_name}%n%f %F{$color_dir}%~%f %F{$color_cursor}→%f "
+# --- END ALTERNATIVE PROMPT SETUP --- #
+
+
 # ---- Custom functions --- #
 # use 'pomo' in the terminal to start it
 pomo() {
