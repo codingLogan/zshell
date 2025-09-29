@@ -90,7 +90,11 @@ else
     color_cursor=220
 fi
 
-PROMPT="%(?.%F{green}√.%F{red}X)%f %F{$color_time}%*%f %F{$color_name}%n%f %F{$color_dir}%~%f %F{$color_cursor}→%f "
+# foreground color theme
+# PROMPT="%(?.%F{green}√.%F{red}X)%f %F{$color_time}%*%f %F{$color_name}%n%f %F{$color_dir}%~%f %F{$color_cursor}→%f "
+
+# background color theme
+PROMPT='%(?.%F{green}√.%F{red}X)%f %F{black}%K{$color_time} %*%k%K{$color_name} %n %k%K{$color_dir} %~ %k%K{$color_cursor} → $(git_branch_name)%k%f '
 # --- END ALTERNATIVE PROMPT SETUP --- #
 
 
