@@ -86,15 +86,17 @@ else
 
     color_time=202
     color_name=208
-    color_dir=212
+    color_dir=202
     color_cursor=220
 fi
 
-# foreground color theme
-# PROMPT="%(?.%F{green}√.%F{red}X)%f %F{$color_time}%*%f %F{$color_name}%n%f %F{$color_dir}%~%f %F{$color_cursor}→%f "
+# Enable substitution in the prompt.
+setopt prompt_subst
 
-# background color theme
-PROMPT='%(?.%F{green}√.%F{red}X)%f %F{black}%K{$color_time} %*%k%K{$color_name} %n %k%K{$color_dir} %~ %k%K{$color_cursor} → $(git_branch_name)%k%f '
+# Prompt Enhancement / Card + Time
+# Card Calendar plugin - see: https://github.com/codingLogan/card-calendar-prompt
+source ~/dev/card-calendar-prompt/prompt.sh
+PROMPT='%(?.%F{green}√.%F{red}X) $(get_calendar_card)%f %F{black}%K{$color_time} %* %k%K{$color_name} %n %k%K{$color_dir} %~ %k%K{$color_cursor} → $(git_branch_name)%k%f '
 # --- END ALTERNATIVE PROMPT SETUP --- #
 
 
