@@ -88,6 +88,24 @@ else
     color_name=208
     color_dir=202
     color_cursor=220
+
+    print -P '%F{green}         --- It is pumpkin season! ---      '
+    print -P '%F{208}                        .,;                   '
+    print -P '%F{208}                      .''.                    '
+    print -P '%F{208}                     . .:                     '
+    print -P '%F{208}         _.ood0Pp._ ,:,::.~ .q?00doo._        ' 
+    print -P '%F{208}     .od00Pd0000Pdb._. . _:db?000b?000bo.     '
+    print -P '%F{208}   .?000Pd0000Pd0000PdbMb?0000b?000b?0000b.   '
+    print -P '%F{208} .d0000Pd0000Pd0000Pd0000b?0000b?000b?0000b.  '
+    print -P '%F{208} d0000Pd0000Pd00000Pd0000b?00000b?0000b?000b.      )  (    '
+    print -P '%F{208} 00000Pd0000Pd0000Pd00000b?00000b?0000b?0000b     (   ) )  '
+    print -P '%F{208} ?0000b?0000b?0000b?00000Pd00000Pd0000Pd0000P      ) ( (   '
+    print -P '%F{208} ?0000b?0000b?0000b?00000Pd00000Pd0000Pd000P     _______)_ '
+    print -P '%F{208}  ?0000b?0000b?0000b?0000Pd0000Pd0000Pd000P:  .-|---------|'
+    print -P '%F{208}    ?000b?0000b?000b?0000Pd000Pd0000Pd000P   ( C|         |'
+    print -P '%F{208}      ~?00b?000b?000b?000Pd00Pd000Pd00P:       -.         |'
+    print -P '%F{208}          ~?0b?0b?000b?0Pd0Pd000PdP~:           :_________:'
+    print -P '%F{208}'
 fi
 
 # Enable substitution in the prompt.
